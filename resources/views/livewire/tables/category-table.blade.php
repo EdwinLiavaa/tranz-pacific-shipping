@@ -79,7 +79,7 @@
                         {{ $category->slug }}
                     </td>
                     <td class="align-middle text-center d-none d-sm-table-cell" style="width: 15%">
-                        {{ $category->created_at->format('d-m-Y') }}
+                        {{ $category->created_at}}
                     </td>
                     <td class="align-middle text-center" style="width: 15%">
                         <x-button.show class="btn-icon" route="{{ route('categories.show', $category) }}"/>

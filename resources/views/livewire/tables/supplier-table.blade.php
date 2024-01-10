@@ -57,7 +57,7 @@
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('shopname')" href="#" role="button">
-                        {{ __('Shop name') }}
+                        {{ __('Business name') }}
                         @include('inclues._sort-icon', ['field' => 'shopname'])
                     </a>
                 </th>

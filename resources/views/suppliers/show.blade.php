@@ -53,7 +53,7 @@
                                     <td>{{ $supplier->address }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Shop name</td>
+                                    <td>Business name</td>
                                     <td>{{ $supplier->shopname }}</td>
                                 </tr>
                                 <tr>
