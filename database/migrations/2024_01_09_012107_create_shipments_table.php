@@ -13,10 +13,7 @@ return new class extends Migration
      {
          Schema::create('shipments', function (Blueprint $table) {
              $table->id();
-             $table->foreignIdFor(\App\Models\Routing::class)
-                ->constrained()
-                ->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Containers::class)
+             $table->foreignIdFor(\App\Models\Containers::class)
                 ->constrained()
                 ->cascadeOnDelete();
              $table->string('hbl_number');
@@ -26,8 +23,6 @@ return new class extends Migration
              $table->integer('weight');
              $table->float('volume');
              $table->integer('packages');
-             $table->foreignIdFor(\App\Models\Unit::class)->constrained()
-             ->cascadeOnDelete();
              $table->timestamps();
          });
      }

@@ -19,8 +19,6 @@ return new class extends Migration
             ->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\Agents::class)->constrained()
             ->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Agents::class)->constrained()
-            ->cascadeOnDelete();
             $table->string('departure_cfs');
             $table->timestamps();
         });
