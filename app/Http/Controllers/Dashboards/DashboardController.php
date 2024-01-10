@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Dashboards;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Manifests;
+use App\Models\Shipments;
+use App\Models\Containers;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Purchase;
@@ -17,7 +20,9 @@ class DashboardController extends Controller
     {
         $orders = Order::count();
         $products = Product::count();
-
+        $manifests = Manifests::count();
+        $shipments = Shipments::count();
+        $containers = Containers::count();
         $purchases = Purchase::count();
         $todayPurchases = Purchase::query()
             //->where('purchase_status', '=', 1)
@@ -27,6 +32,9 @@ class DashboardController extends Controller
         $quotations = Quotation::count();
 
         return view('dashboard', [
+            'manifests' => $manifests,
+            'shipments' => $shipments,
+            'containers' => $containers,
             'products' => $products,
             'orders' => $orders,
             'purchases' => $purchases,

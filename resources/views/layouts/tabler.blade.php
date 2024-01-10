@@ -301,6 +301,18 @@
                                         <div class="dropdown-menu-columns">
                                             <div class="dropdown-menu-column">
                                                 <a class="dropdown-item" href="{{ route('suppliers.index') }}">
+                                                    {{ __('Manifests') }}
+                                                </a>
+                                                <a class="dropdown-item" href="{{ route('suppliers.index') }}">
+                                                    {{ __('Agents') }}
+                                                </a>
+                                                <a class="dropdown-item" href="{{ route('suppliers.index') }}">
+                                                    {{ __('Shipments') }}
+                                                </a>
+                                                <a class="dropdown-item" href="{{ route('suppliers.index') }}">
+                                                    {{ __('Containers') }}
+                                                </a>
+                                                <a class="dropdown-item" href="{{ route('suppliers.index') }}">
                                                     {{ __('Suppliers') }}
                                                 </a>
                                                 <a class="dropdown-item" href="{{ route('customers.index') }}">

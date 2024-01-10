@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('manifest_header', function (Blueprint $table) {
+        Schema::create('manifests', function (Blueprint $table) {
             $table->id();
             $table->string('manifest_number');
             $table->string('manifest_date');
@@ -19,6 +19,7 @@ return new class extends Migration
             ->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\Agents::class)->constrained()
             ->cascadeOnDelete();
+
             $table->string('departure_cfs');
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('manifest_header');
+        Schema::dropIfExists('manifests');
     }
 };
