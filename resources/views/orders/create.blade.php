@@ -9,7 +9,7 @@
                     <div class="card-header">
                         <div>
                             <h3 class="card-title">
-                                {{ __('New Order') }}
+                                {{ __('New Invoice') }}
                             </h3>
                         </div>
                         <div class="card-actions btn-actions">
@@ -92,7 +92,7 @@
                                                 {{ __('Product') }}
                                             </th>
                                             <th scope="col" class="text-center">{{ __('Quantity') }}</th>
-                                            <th scope="col" class="text-center">{{ __('Price') }}</th>
+                                            <th scope="col" class="text-center">{{ __('Costing') }}</th>
                                             <th scope="col" class="text-center">{{ __('SubTotal') }}</th>
                                             <th scope="col" class="text-center">
                                                 {{ __('Action') }}
@@ -197,7 +197,7 @@
                                             <th scope="col">Name</th>
                                             <th scope="col">Quantity</th>
                                             <th scope="col">Unit</th>
-                                            <th scope="col">Price</th>
+                                            <th scope="col">Cost</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>

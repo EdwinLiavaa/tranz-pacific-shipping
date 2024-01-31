@@ -1,7 +1,8 @@
 @extends('layouts.tabler')
 
 @section('content')
-<div class="page-body">
+<div class="page-ls
+dy">
     <div class="container-xl">
 
         <x-alert/>
@@ -17,7 +18,7 @@
                             <div class="card-header">
                                 <div>
                                     <h3 class="card-title">
-                                        {{ __('Create Purchase') }}
+                                        {{ __('Create Receipt') }}
                                     </h3>
                                 </div>
 
@@ -42,7 +43,7 @@
                                 <div class="row gx-3 mb-3">
                                     <div class="col-md-4">
                                         <label for="date" class="form-label required">
-                                            {{ __('Purchase Date') }}
+                                            {{ __('Receipt Date') }}
                                         </label>
 
                                         <input name="date" id="date" type="date"
@@ -62,22 +63,22 @@
 
 
                                     <x-tom-select
-                                        label="Suppliers"
-                                        id="supplier_id"
-                                        name="supplier_id"
+                                        label="Customers"
+                                        id="customer_id"
+                                        name="customer_id"
                                         placeholder="Select Customer"
-                                        :data="$suppliers"
+                                        :data="$orders
                                     />
 
                                     <div class="col-md-4">
                                         <label for="reference" class="form-label required">
-                                            {{ __('Reference') }}
+                                            {{ __('Reference Number') }}
                                         </label>
 
                                         <input type="text" class="form-control"
                                                id="reference"
                                                name="reference"
-                                               value="PRS"
+                                               value=""
                                                readonly
                                         >
 
@@ -93,10 +94,10 @@
                             </div>
 
                             <div class="card-footer text-end">
-                                {{--- onclick="return confirm('Are you sure you want to purchase?')" ---}}
+                                {{--- onclick="return confirm('Are you sure you want to pay?')" ---}}
                                 {{--- @disabled($errors->isNotEmpty()) ---}}
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Purchase') }}
+                                    {{ __('Create Receipt') }}
                                 </button>
                             </div>
                         </div>

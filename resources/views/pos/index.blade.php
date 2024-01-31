@@ -32,7 +32,7 @@
                                 <tr>
                                     <th scope="col">Name</th>
                                     <th scope="col">QTY</th>
-                                    <th scope="col">Price</th>
+                                    <th scope="col">Cost</th>
                                     <th scope="col">SubTotal</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -170,7 +170,7 @@
                                         <th scope="col">@sortablelink('product_name', 'Name')</th>
                                         <th scope="col">@sortablelink('stock')</th>
                                         <th scope="col">@sortablelink('unit.name', 'unit')</th>
-                                        <th scope="col">@sortablelink('selling_price', 'Price')</th>
+                                        <th scope="col">@sortablelink('selling_price', 'Cost')</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>

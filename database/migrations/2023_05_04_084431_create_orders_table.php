@@ -15,7 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(\App\Models\Customer::class)
                 ->constrained();
+            $table->foreignIdFor(\App\Models\Supplier::class)
+                ->constrained();
             $table->string('order_date');
+            $table->string('manifest_number');
+            $table->string('departure_cfs');
+            $table->string('manifest_image')->nullable();
             $table->tinyInteger('order_status')
                 ->comment('0 - Pending / 1 - Complete');
             $table->integer('total_products');

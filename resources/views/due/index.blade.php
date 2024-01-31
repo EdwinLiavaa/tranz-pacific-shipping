@@ -4,9 +4,9 @@
 <div class="page-body">
     @if($orders->isEmpty())
     <x-empty
-        title="No orders found"
+        title="No Invoices found"
         message="Try adjusting your search or filter to find what you're looking for."
-        button_label="{{ __('Add your first Order') }}"
+        button_label="{{ __('Add your first Invoice') }}"
         button_route="{{ route('orders.create') }}"
     />
     @else
@@ -15,7 +15,7 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Due Order List') }}
+                        {{ __('Due Invoice List') }}
                     </h3>
                 </div>
                 <div class="card-actions">
@@ -56,12 +56,12 @@
                             </td>
                             <td class="text-center">
                                 <span class="badge bg-green text-white">
-                                    {{ Number::currency($order->pay, 'EUR') }}
+                                    {{ Number::currency($order->pay, 'USD') }}
                                 </span>
                             </td>
                             <td class="text-center">
                                 <span class="badge bg-yellow text-white">
-                                    {{ Number::currency($order->due, 'EUR') }}
+                                    {{ Number::currency($order->due, 'USD') }}
                                 </span>
                             </td>
                             <td class="text-center">

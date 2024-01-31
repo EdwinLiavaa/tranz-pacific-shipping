@@ -22,12 +22,12 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-sm-6">
                                         <div class="logo">
-                                            <h1>Name Store</h1>
+                                            <h1>Tranz Pacific Shipping</h1>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-sm-6">
                                         <div class="invoice">
-                                            <h1>Invoice # <span>123456</span></h1>
+                                          <h1>Invoice # <span> </span></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -52,11 +52,11 @@
                                         <p class="inv-from-2">{{ $customer->address }}</p>
                                     </div>
                                     <div class="col-sm-6 text-end mb-50">
-                                        <h4 class="inv-title-1">Store</h4>
-                                        <p class="inv-from-1">Name Store</p>
-                                        <p class="inv-from-1">(+62) 123 123 123</p>
-                                        <p class="inv-from-1">email@example.com</p>
-                                        <p class="inv-from-2">Cirebon, Jawa Barat, Indonesia</p>
+                                        <h4 class="inv-title-1">Contact Info</h4>
+                                        <p class="inv-from-1">Tranz Pacific Shipping</p>
+                                        <p class="inv-from-1">(+676) 22-816</p>
+                                        <p class="inv-from-1">tranzpacific@gmail.com</p>
+                                        <p class="inv-from-2">By-Pass Road, Halaleva, Nuku'alofa, Tonga.</p>
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">Item</th>
-                                                <th class="text-center">Price</th>
+                                                <th class="text-center">Cost</th>
                                                 <th class="text-center">Quantity</th>
                                                 <th class="text-center">Subtotal</th>
                                             </tr>
@@ -117,7 +117,7 @@
                             </a>
 
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
-                                {{ __('Pay Now') }}
+                                {{ __('Pay') }}
                             </button>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">
-                            {{ __('Pay Order') }}
+                            {{ __('Pay Invoice') }}
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>

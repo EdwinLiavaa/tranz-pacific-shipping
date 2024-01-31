@@ -13,14 +13,12 @@ return new class extends Migration
     {
         Schema::create('manifests', function (Blueprint $table) {
             $table->id();
-            $table->string('manifest_number');
-            $table->string('manifest_date');
-            $table->foreignIdFor(\App\Models\Shipments::class)->constrained()
-            ->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\Agents::class)->constrained()
-            ->cascadeOnDelete();
 
-            $table->string('departure_cfs');
+            $table->string('manifest_number')->unique();
+            $table->string('manifest_date');
+            $table->foreignIdFor(\App\Models\Shipment::class)
+                ->constrained()
+                ->cascadeOnDelete();
             $table->timestamps();
         });
     }

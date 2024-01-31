@@ -20,22 +20,6 @@
             <div class="row row-cards">
 
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title">
-                                    {{ __('Profile Image') }}
-                                </h3>
-
-                                <img id="image-preview"
-                                     class="img-account-profile mb-2"
-                                     src="{{ asset('assets/img/demo/user-placeholder.svg') }}"
-                                     alt=""
-                                >
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="col-lg-8">
                         <div class="card">
                             <div class="card-header">
@@ -63,15 +47,15 @@
                                         <td>{{ $customer->address }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Account holder</td>
+                                        <td>TIN Number</td>
                                         <td>{{ $customer->account_holder }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Account number</td>
+                                        <td>Custom warrant number</td>
                                         <td>{{ $customer->account_number }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Bank name</td>
+                                        <td>Broker</td>
                                         <td>{{ $customer->bank_name }}</td>
                                     </tr>
                                     </tbody>

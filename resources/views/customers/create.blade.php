@@ -21,29 +21,6 @@
 
             <form action="{{ route('customers.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title">
-                                    {{ __('Product Image') }}
-                                </h3>
-
-                                <img class="img-account-profile rounded-circle mb-2" src="{{ asset('assets/img/demo/user-placeholder.svg') }}" alt="" id="image-preview" />
-
-                                <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 2 MB</div>
-
-                                <input class="form-control @error('photo') is-invalid @enderror" type="file"  id="image" name="photo" accept="image/*" onchange="previewImage();">
-
-                                @error('photo')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
@@ -64,16 +41,13 @@
 
                                     <div class="col-sm-6 col-md-6">
                                         <label for="bank_name" class="form-label">
-                                            Bank Name
+                                            Shipping Information
                                         </label>
 
                                         <select class="form-select form-control-solid @error('bank_name') is-invalid @enderror" id="bank_name" name="bank_name">
-                                            <option selected="" disabled="">Select a bank:</option>
-                                            <option value="BRI" @if(old('bank_name') == 'BRI')selected="selected"@endif>BRI</option>
-                                            <option value="BNI" @if(old('bank_name') == 'BNI')selected="selected"@endif>BNI</option>
-                                            <option value="BCA" @if(old('bank_name') == 'BCA')selected="selected"@endif>BCA</option>
-                                            <option value="BSI" @if(old('bank_name') == 'BSI')selected="selected"@endif>BSI</option>
-                                            <option value="Mandiri" @if(old('bank_name') == 'Mandiri')selected="selected"@endif>Mandiri</option>
+                                            <option selected="" disabled="">Select Broker:</option>
+                                            <option value="FSSL" @if(old('bank_name') == 'FSSL')selected="selected"@endif>FSSL</option>
+                                            <option value="TPS" @if(old('bank_name') == 'TPS')selected="selected"@endif>TPS</option>
                                         </select>
 
                                         @error('bank_name')
@@ -85,11 +59,11 @@
 
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="Account holder" name="account_holder" />
+                                        <x-input label="TIN number" name="account_holder" />
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="Account number" name="account_number" />
+                                        <x-input label="Custom Warrant number" name="account_number" />
                                     </div>
 
                                     <div class="mb-3">

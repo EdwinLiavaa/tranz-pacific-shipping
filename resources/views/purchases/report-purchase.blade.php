@@ -8,7 +8,7 @@
                 <div class="col-auto mt-4">
                     <h1 class="page-header-title">
                         <div class="page-header-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                        Purchase Report
+                        Receipt Report
                     </h1>
                 </div>
             </div>
@@ -26,7 +26,7 @@
             <div class="col-xl-12">
                 <div class="card mb-4">
                     <div class="card-header">
-                        Purchase Report Details
+                        Receipt Report Details
                     </div>
                     <div class="card-body">
                         <div class="row gx-3 mb-3">

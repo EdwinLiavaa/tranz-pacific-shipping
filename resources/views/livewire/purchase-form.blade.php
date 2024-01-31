@@ -4,7 +4,7 @@
             <tr>
                 <th class="align-middle">Product</th>
                 <th class="align-middle text-center">Quantity</th>
-                <th class="align-middle text-center">Price</th>
+                <th class="align-middle text-center">Cost</th>
                 <th class="align-middle text-center">Total</th>
                 <th class="align-middle text-center">Action</th>
             </tr>
@@ -116,7 +116,7 @@
                 </th>
                 <td class="text-center">
 {{--                    ${{ number_format($subtotal, 2) }}--}}
-                    {{ Number::currency($subtotal, 'EUR') }}
+                    {{ Number::currency($subtotal, 'USD') }}
                 </td>
             </tr>
             <tr>
@@ -139,7 +139,7 @@
                     Total
                 </th>
                 <td class="text-center">
-                    {{ Number::currency($total, 'EUR') }}
+                    {{ Number::currency($total, 'USD') }}
                     <input type="hidden" name="total_amount" value="{{ $total }}">
                 </td>
             </tr>

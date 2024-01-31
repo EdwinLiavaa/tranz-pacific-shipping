@@ -6,7 +6,7 @@
         <div class="row g-2 align-items-center mb-3">
             <div class="col">
                 <h2 class="page-title">
-                    {{ __('New Quotation') }}
+                    {{ __('New Invoice') }}
                 </h2>
             </div>
         </div>
@@ -153,7 +153,7 @@
                                 <div class="col-md-12 mt-4">
                                     <div class="d-flex flex-wrap">
                                         <button type="submit" class="btn btn-success add-list mx-1">
-                                            {{ __('Create Quotation') }}
+                                            {{ __('Input Details') }}
                                         </button>
                                     </div>
                                 </div>

@@ -14,7 +14,7 @@
             </svg>
         </div>
         <p class="empty-title">
-            No orders found
+            No invoice found
         </p>
         <p class="empty-subtitle text-secondary">
             Try adjusting your search or filter to find what you're looking for.
@@ -22,7 +22,7 @@
         <div class="empty-action">
             <a href="{{ route('orders.create') }}" class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 5l0 14"></path><path d="M5 12l14 0"></path></svg>
-                Add your first Order
+                Add your first Invoice
             </a>
         </div>
     </div>
@@ -32,7 +32,7 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Orders: Completed') }}
+                        {{ __('Invoice: Completed') }}
                     </h3>
                 </div>
 
@@ -64,7 +64,7 @@
                             <td class="text-center">{{ $order->customer->name }}</td>
                             <td class="text-center">{{ $order->order_date->format('d-m-Y') }}</td>
                             <td class="text-center">{{ $order->payment_type }}</td>
-                            <td class="text-center">{{ Number::currency($order->total, 'EUR') }}</td>
+                            <td class="text-center">{{ Number::currency($order->total,'USD') }}</td>
                             <td class="text-center">
                                 <span class="badge bg-green text-white text-uppercase">
                                     {{ $order->order_status }}

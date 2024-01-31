@@ -7,7 +7,7 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Purchase Edit') }}
+                        {{ __('Receipt Edit') }}
                     </h3>
                 </div>
 
@@ -45,13 +45,13 @@
                         <div class="form-control form-control-solid">{{ $purchase->supplier->phone }}</div>
                     </div>
                     <div class="col-md-6">
-                        <label class="small mb-1">Order Date</label>
+                        <label class="small mb-1">Receipt Date</label>
                         <div class="form-control form-control-solid">{{ $purchase->date }}</div>
                     </div>
                 </div>
                 <div class="row gx-3 mb-3">
                     <div class="col-md-6">
-                        <label class="small mb-1">No Purchase</label>
+                        <label class="small mb-1">No Receipt</label>
                         <div class="form-control">{{ $purchase->purchase_no }}</div>
                     </div>
                     <div class="col-md-6">
@@ -84,9 +84,9 @@
 
                         <button type="submit"
                                 class="btn btn-success"
-                                onclick="return confirm('Are you sure you want to approve this purchase?')"
+                                onclick="return confirm('Are you sure you want to approve this receipt?')"
                         >
-                            {{ __('Approve Purchase') }}
+                            {{ __('Approve Receipt') }}
                         </button>
                     </form>
                 @endif
@@ -110,9 +110,9 @@
                                             <th scope="col">Photo</th>
                                             <th scope="col">Product Name</th>
                                             <th scope="col">Product Code</th>
-                                            <th scope="col">Current Stock</th>
+                                            <th scope="col">Storage</th>
                                             <th scope="col">Quantity</th>
-                                            <th scope="col">Price</th>
+                                            <th scope="col">Cost</th>
                                             <th scope="col">Total</th>
                                         </tr>
                                     </thead>

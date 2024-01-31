@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Inventory</title>
+    <title>Invoices</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
 
@@ -27,12 +27,12 @@
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <div class="logo">
-                                    <h1>Name Store</h1>
+                                    <h1>Name</h1>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <div class="invoice">
-                                    <h1>Invoice # <span>123456</span></h1>
+                                    <h1>Invoice # <span>{{ $order->invoice_no }}</span></h1>
                                 </div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                                 <div class="invoice-number">
                                     <h4 class="inv-title-1">Invoice date:</h4>
                                     <p class="invo-addr-1">
-                                        {{ Carbon\Carbon::now()->format('M d, Y') }}
+                                        {{ Carbon\Carbon::now()->format('d M, Y') }}
                                     </p>
                                 </div>
                             </div>
@@ -57,11 +57,11 @@
                                 <p class="inv-from-2">{{ $customer->address }}</p>
                             </div>
                             <div class="col-sm-6 text-end mb-50">
-                                <h4 class="inv-title-1">Store</h4>
-                                <p class="inv-from-1">Name Store</p>
+                                <h4 class="inv-title-1">Customer</h4>
+                                <p class="inv-from-1">Contacts</p>
                                 <p class="inv-from-1">(+62) 123 123 123</p>
                                 <p class="inv-from-1">email@example.com</p>
-                                <p class="inv-from-2">Cirebon, Jawa Barat, Indonesia</p>
+                                <p class="inv-from-2">By-Pass road, Nuku'alofa, Tonga</p>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center">Item</th>
-                                    <th class="text-center">Price</th>
+                                    <th class="text-center">Cost</th>
                                     <th class="text-center">Quantity</th>
                                     <th class="text-center">Subtotal</th>
                                 </tr>

@@ -24,43 +24,7 @@
                 @method('put')
 
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title">
-                                    {{ __('Product Image') }}
-                                </h3>
-
-                                <img class="img-account-profile mb-2"
-                                     src="{{ $product->product_image ? asset('storage/products/'.$product->product_image) : asset('assets/img/products/default.webp') }}"
-                                     alt=""
-                                     id="image-preview"
-                                >
-
-                                <div class="small font-italic text-muted mb-2">
-                                    JPG or PNG no larger than 2 MB
-                                </div>
-
-                                <input
-                                    type="file"
-                                    accept="image/*"
-                                    id="image"
-                                    name="product_image"
-                                    class="form-control @error('product_image') is-invalid @enderror"
-                                    onchange="previewImage();"
-                                >
-
-                                @error('product_image')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="col-lg-8">
-
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">

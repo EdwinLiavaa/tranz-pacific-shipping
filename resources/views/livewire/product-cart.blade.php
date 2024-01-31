@@ -21,10 +21,10 @@
                 <thead class="thead-dark">
                 <tr>
                     <th class="align-middle">Product</th>
-                    <th class="align-middle text-center">Net Unit Price</th>
-                    <th class="align-middle text-center">Stock</th>
+                    <th class="align-middle text-center">Net Unit Cost</th>
+                    <th class="align-middle text-center">Storage</th>
                     <th class="align-middle text-center">Quantity</th>
-                    <th class="align-middle text-center">Discount</th>
+                    <th class="align-middle text-center">Fee</th>
                     <th class="align-middle text-center">Tax</th>
                     <th class="align-middle text-center">Sub Total</th>
                     <th class="align-middle text-center">Action</th>

@@ -4,9 +4,9 @@
 <div class="page-body">
     @if($purchases->isEmpty())
     <x-empty
-        title="No purchases found"
+        title="No Receipts found"
         message="Try adjusting your search or filter to find what you're looking for."
-        button_label="{{ __('Add your first Purchase') }}"
+        button_label="{{ __('Add your first Receipt') }}"
         button_route="{{ route('purchases.create') }}"
     />
     @else
@@ -17,7 +17,7 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Purchases') }}
+                        {{ __('Receipts') }}
                     </h3>
                 </div>
 
@@ -31,8 +31,8 @@
                     <thead class="thead-light">
                         <tr>
                             <th scope="col" class="align-middle text-center">{{ __('No.') }}</th>
-                            <th scope="col" class="align-middle text-center">{{ __('Purchase No.') }}</th>
-                            <th scope="col" class="align-middle text-center">{{ __('Supplier') }}</th>
+                            <th scope="col" class="align-middle text-center">{{ __('Receipt No.') }}</th>
+                            <th scope="col" class="align-middle text-center">{{ __('Agent') }}</th>
                             <th scope="col" class="align-middle text-center">{{ __('Date') }}</th>
                             <th scope="col" class="align-middle text-center">{{ __('Total') }}</th>
                             <th scope="col" class="align-middle text-center">{{ __('Status') }}</th>
@@ -55,7 +55,7 @@
                             {{ $purchase->purchase_date->format('d-m-Y') }}
                         </td>
                         <td class="align-middle text-center">
-                            {{ Number::currency($purchase->total_amount, 'EUR') }}
+                            {{ Number::currency($purchase->total_amount, 'USD') }}
                         </td>
 
                         @if ($purchase->purchase_status == 1)

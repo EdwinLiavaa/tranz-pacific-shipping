@@ -4,28 +4,12 @@
 <div class="page-body">
     <div class="container-xl">
         <div class="row row-cards">
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">
-                            {{ __('Profile Image') }}
-                        </h3>
-
-                        <img id="image-preview"
-                             class="img-account-profile mb-2"
-                             src="{{ asset('assets/img/demo/user-placeholder.svg') }}"
-                             alt=""
-                        >
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-8">
+             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-header">
                         <div>
                             <h3 class="card-title">
-                                {{ __('Supplier Details') }}
+                                {{ __('Agent Details') }}
                             </h3>
                         </div>
 

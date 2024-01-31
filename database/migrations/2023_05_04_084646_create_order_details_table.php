@@ -22,6 +22,18 @@ return new class extends Migration
                 ->constrained()
                 ->cascadeOnDelete();
 
+            $table->string('hbl_number');
+            $table->string('container_number');
+            $table->string('seal_number');
+            $table->integer('tare_weight');
+            $table->integer('tgross_weight');
+            $table->text('notes')->nullable();
+            $table->string('consignor');
+            $table->string('consignee');
+            $table->text('handling_instructions')->nullable();
+            $table->integer('weight');
+            $table->float('volume');
+            $table->integer('packages');
             $table->integer('quantity');
             $table->integer('unitcost');
             $table->integer('total');

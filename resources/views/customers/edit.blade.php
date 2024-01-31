@@ -23,6 +23,7 @@
                 @csrf
                 @method('put')
                 <div class="row">
+                    {{--
                     <div class="col-lg-4">
                         <div class="card">
                             <div class="card-body">
@@ -44,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-
+                    --}}
                     <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
@@ -65,16 +66,13 @@
 
                                     <div class="col-sm-6 col-md-6">
                                         <label for="bank_name" class="form-label">
-                                            {{ __('Bank Name') }}
+                                            {{ __('Shipping Information') }}
                                         </label>
 
                                         <select class="form-select @error('bank_name') is-invalid @enderror" id="bank_name" name="bank_name">
-                                            <option selected="" disabled>Select a bank:</option>
-                                            <option value="BRI" @if(old('bank_name', $customer->bank_name) == 'BRI')selected="selected"@endif>BRI</option>
-                                            <option value="BNI" @if(old('bank_name', $customer->bank_name) == 'BNI')selected="selected"@endif>BNI</option>
-                                            <option value="BCA" @if(old('bank_name', $customer->bank_name) == 'BCA')selected="selected"@endif>BCA</option>
-                                            <option value="BSI" @if(old('bank_name', $customer->bank_name) == 'BSI')selected="selected"@endif>BSI</option>
-                                            <option value="Mandiri" @if(old('bank_name', $customer->bank_name) == 'Mandiri')selected="selected"@endif>Mandiri</option>
+                                            <option selected="" disabled>Select Broker:</option>
+                                            <option value="FSSL" @if(old('bank_name', $customer->bank_name) == 'FSSL')selected="selected"@endif>FSSL</option>
+                                            <option value="TPS" @if(old('bank_name', $customer->bank_name) == 'TPS')selected="selected"@endif>TPS</option>
                                         </select>
 
                                         @error('bank_name')
@@ -85,7 +83,7 @@
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="Account holder"
+                                        <x-input label="TIN number"
                                                  name="account_holder"
                                                  :value="old('account_holder', $customer->account_holder)"
                                                  :required="true"
@@ -93,7 +91,7 @@
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="Account number"
+                                        <x-input label="Custom warrant number"
                                                  name="account_number"
                                                  :value="old('account_number', $customer->account_number)"
                                                  :required="true"

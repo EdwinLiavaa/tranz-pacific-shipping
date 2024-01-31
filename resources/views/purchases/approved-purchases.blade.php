@@ -7,7 +7,7 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Purchases: Approved') }}
+                        {{ __('Manifest') }}
                     </h3>
                 </div>
 
@@ -22,8 +22,8 @@
                     <thead class="thead-light">
                         <tr>
                             <th scope="col" class="text-center">No.</th>
-                            <th scope="col" class="text-center">Purchase</th>
-                            <th scope="col" class="text-center">Supplier</th>
+                            <th scope="col" class="text-center">Customer</th>
+                            <th scope="col" class="text-center">Agent</th>
                             <th scope="col" class="text-center">Date</th>
                             <th scope="col" class="text-center">Total</th>
                             <th scope="col" class="text-center">Status</th>
@@ -46,7 +46,7 @@
                                 {{ $purchase->purchase_date->format('d-m-Y') }}
                             </td>
                             <td class="text-center">
-                                {{ Number::currency($purchase->total_amount, 'EUR') }}
+                                {{ Number::currency($purchase->total_amount, 'USD') }}
                             </td>
                             <td class="text-center">
                                 <span class="btn btn-{{ $purchase->purchase_status == 0 ? 'warning' : 'success' }} btn-sm text-uppercase">{{ $purchase->purchase_status == 0 ? 'pending' : 'approved' }}</span>

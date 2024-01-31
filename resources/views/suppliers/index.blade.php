@@ -4,9 +4,9 @@
 <div class="page-body">
     @if($suppliers->isEmpty())
         <x-empty
-            title="No suppliers found"
+            title="No agents found"
             message="Try adjusting your search or filter to find what you're looking for."
-            button_label="{{ __('Add your first Supplier') }}"
+            button_label="{{ __('Add your first Agent') }}"
             button_route="{{ route('suppliers.create') }}"
         />
     @else

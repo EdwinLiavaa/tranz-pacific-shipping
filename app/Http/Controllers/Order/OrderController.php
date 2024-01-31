@@ -66,7 +66,7 @@ class OrderController extends Controller
 
         return redirect()
             ->route('orders.index')
-            ->with('success', 'Order has been created!');
+            ->with('success', 'Invoice has been created!');
     }
 
     public function show(Order $order)
@@ -97,7 +97,7 @@ class OrderController extends Controller
 
         return redirect()
             ->route('orders.complete')
-            ->with('success', 'Order has been completed!');
+            ->with('success', 'Invoice has been completed!');
     }
 
     public function destroy(Order $order)

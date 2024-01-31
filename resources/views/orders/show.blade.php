@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <div>
                         <h3 class="card-title">
-                            {{ __('Order Details') }}
+                            {{ __('Invoice Details') }}
                         </h3>
                     </div>
 
@@ -28,7 +28,7 @@
                                         >
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
 
-                                            {{ __('Approve Order') }}
+                                            {{ __('Approve Invoice') }}
                                         </button>
                                     </form>
                                 @endif
@@ -43,7 +43,7 @@
                     <div class="row row-cards mb-3">
                         <div class="col">
                             <label for="order_date" class="form-label required">
-                                {{ __('Order Date') }}
+                                {{ __('Invoice Date') }}
                             </label>
                             <input type="text"
                                    id="order_date"
@@ -95,7 +95,7 @@
                                 <th scope="col" class="align-middle text-center">Product Name</th>
                                 <th scope="col" class="align-middle text-center">Product Code</th>
                                 <th scope="col" class="align-middle text-center">Quantity</th>
-                                <th scope="col" class="align-middle text-center">Price</th>
+                                <th scope="col" class="align-middle text-center">Cost</th>
                                 <th scope="col" class="align-middle text-center">Total</th>
                             </tr>
                             </thead>
@@ -138,7 +138,7 @@
                                 <td class="text-center">{{ number_format($order->due, 2) }}</td>
                             </tr>
                             <tr>
-                                <td colspan="6" class="text-end">VAT</td>
+                                <td colspan="6" class="text-end">CT</td>
                                 <td class="text-center">{{ number_format($order->vat, 2) }}</td>
                             </tr>
                             <tr>
@@ -160,7 +160,7 @@
                                     class="btn btn-success"
                                     onclick="return confirm('Are you sure you want to complete this order?')"
                             >
-                                {{ __('Complete Order') }}
+                                {{ __('Complete Invoice') }}
                             </button>
                         </form>
                     @endif

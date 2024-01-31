@@ -8,7 +8,7 @@
                 <div class="col-auto mb-3">
                     <h1 class="page-header-title">
                         <div class="page-header-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg></div>
-                        Purchase Details
+                        Reciept Details
                     </h1>
                 </div>
             </div>
@@ -21,7 +21,7 @@
         <div class="col-xl-12">
             <div class="card mb-4">
                 <div class="card-header">
-                    Information Supplier
+                    Information Agent
                 </div>
                 <div class="card-body">
                     <!-- Form Row -->
@@ -46,13 +46,13 @@
                         </div>
                         <!-- Form Group (order date) -->
                         <div class="col-md-6">
-                            <label class="small mb-1">Order Date</label>
+                            <label class="small mb-1">Payment Date</label>
                             <div class="form-control form-control-solid">{{ $purchase->purchase_date }}</div>
                         </div>
                     </div>
                     <div class="row gx-3 mb-3">
                         <div class="col-md-6">
-                            <label class="small mb-1">No Purchase</label>
+                            <label class="small mb-1">No Reciept</label>
                             <div class="form-control form-control-solid">{{ $purchase->purchase_no }}</div>
                         </div>
                         <div class="col-md-6">
@@ -83,7 +83,7 @@
                         @method('put')
                         <input type="hidden" name="id" value="{{ $purchase->id }}">
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-success" onclick="return confirm('Are you sure you want to approve this purchase?')">Approve Purchase</button>
+                        <button type="submit" class="btn btn-success" onclick="return confirm('Are you sure you want to approve this receipt?')">Approve Receipt</button>
                         <a class="btn btn-primary" href="{{ URL::previous() }}">Back</a>
                     </form>
                     @else
@@ -109,7 +109,7 @@
                                         <th scope="col">Photo</th>
                                         <th scope="col">Product Name</th>
                                         <th scope="col">Product Code</th>
-                                        <th scope="col">Current Stock</th>
+                                        <th scope="col">Storage</th>
                                         <th scope="col">Quantity</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Total</th>

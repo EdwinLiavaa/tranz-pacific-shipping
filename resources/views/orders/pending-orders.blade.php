@@ -15,7 +15,7 @@
                 <path d="M9.5 15.25a3.5 3.5 0 0 1 5 0" />
             </svg>
         </div>
-        <p class="empty-title">No orders found</p>
+        <p class="empty-title">No invoice found</p>
         <p class="empty-subtitle text-secondary">
             Try adjusting your search or filter to find what you're looking for.
         </p>
@@ -32,7 +32,7 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Orders: Pending') }}
+                        {{ __('Invoice: Pending') }}
                     </h3>
                 </div>
 
@@ -66,7 +66,7 @@
                             <td class="text-center">{{ $order->customer->name }}</td>
                             <td class="text-center">{{ $order->order_date->format('d-m-Y') }}</td>
                             <td class="text-center">{{ $order->payment_type }}</td>
-                            <td class="text-center">{{ Number::currency($order->total, 'EUR') }}</td>
+                            <td class="text-center">{{ Number::currency($order->total, 'USD') }}</td>
                             <td class="text-center">
                                 <span class="badge bg-orange text-white text-uppercase">
                                     {{ $order->order_status }}

@@ -2,7 +2,7 @@
     <div class="card-header">
         <div>
             <h3 class="card-title">
-                {{ __('Orders') }}
+                {{ __('Invoices') }}
             </h3>
         </div>
 
@@ -103,7 +103,7 @@
                         {{ $order->payment_type }}
                     </td>
                     <td class="align-middle text-center">
-                        {{ Number::currency($order->total, 'EUR') }}
+                        {{ Number::currency($order->total, 'USD') }}
                     </td>
                     <td class="align-middle text-center">
                         <x-status dot color="{{ $order->order_status === \App\Enums\OrderStatus::COMPLETE ? 'green' : 'orange' }}"
