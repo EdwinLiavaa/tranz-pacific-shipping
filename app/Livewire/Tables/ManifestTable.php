@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Tables;
 
-use App\Models\Manifests;
+use App\Models\Manifest;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -34,8 +34,8 @@ class OrderTable extends Component
     public function render()
     {
         return view('livewire.tables.manifests-table', [
-            'orders' => Order::query()
-                ->with(['shipment', 'hbl_number'])
+            'manifests' => Manifest::query()
+                ->with(['manifests', 'manifest_number'])
                 ->search($this->search)
                 ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                 ->paginate($this->perPage)

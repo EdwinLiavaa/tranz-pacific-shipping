@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Container;
-use App\Http\Requests\Customer\StoreContainerRequest;
-use App\Http\Requests\Customer\UpdateContainerRequest;
+use App\Http\Requests\Container\StoreContainerRequest;
+use App\Http\Requests\Container\UpdateContainerRequest;
 
 class ContainerController extends Controller
 {
@@ -12,7 +12,7 @@ class ContainerController extends Controller
     {
         $containers = Container::all();
 
-        return view('customers.index', [
+        return view('containers.index', [
             'containers' => $containers
         ]);
     }
@@ -35,7 +35,7 @@ class ContainerController extends Controller
             $filename = hexdec(uniqid()).'.'.$file->getClientOriginalExtension();
 
             $file->storeAs('containers/', $filename, 'public');
-            $customer->update([
+            $container->update([
                 'photo' => $filename
             ]);
         }
@@ -47,7 +47,7 @@ class ContainerController extends Controller
 
     public function show(Container $container)
     {
-        $customer->loadMissing(['quotations', 'orders'])->get();
+        $container->loadMissing(['quotations', 'orders'])->get();
 
         return view('containers.show', [
             'container' => $container
@@ -56,7 +56,7 @@ class ContainerController extends Controller
 
     public function edit(Container $container)
     {
-        return view('customers.edit', [
+        return view('containers.edit', [
             'container' => $container
         ]);
     }
@@ -64,13 +64,13 @@ class ContainerController extends Controller
     public function update(UpdateContainerRequest $request, Container $container)
     {
         //
-        $customer->update($request->except('photo'));
+        $container->update($request->except('photo'));
 
         if($request->hasFile('photo')){
 
             // Delete Old Photo
             if($container->photo){
-                unlink(public_path('storage/containers/') . $customer->photo);
+                unlink(public_path('storage/containers/') . $container->photo);
             }
 
             // Prepare New Photo
@@ -81,7 +81,7 @@ class ContainerController extends Controller
             $file->storeAs('containers/', $fileName, 'public');
 
             // Save DB
-            $customer->update([
+            $container->update([
                 'photo' => $fileName
             ]);
         }

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Manifest;
-use App\Http\Requests\Customer\StoreManifestRequest;
-use App\Http\Requests\Customer\UpdateManifestRequest;
+use App\Http\Requests\Manifest\StoreManifestRequest;
+use App\Http\Requests\Manifest\UpdateManifestRequest;
 
 class ManifestController extends Controller
 {
@@ -12,7 +12,7 @@ class ManifestController extends Controller
     {
         $manifests = Manifest::all();
 
-        return view('customers.index', [
+        return view('manifests.index', [
             'manifests' => $manifests
         ]);
     }
@@ -35,7 +35,7 @@ class ManifestController extends Controller
             $filename = hexdec(uniqid()).'.'.$file->getClientOriginalExtension();
 
             $file->storeAs('manifests/', $filename, 'public');
-            $customer->update([
+            $manifest->update([
                 'photo' => $filename
             ]);
         }
@@ -47,7 +47,7 @@ class ManifestController extends Controller
 
     public function show(Manifest $manifest)
     {
-        $customer->loadMissing(['quotations', 'orders'])->get();
+        $manifest->loadMissing(['quotations', 'orders'])->get();
 
         return view('manifests.show', [
             'manifest' => $manifest
@@ -56,7 +56,7 @@ class ManifestController extends Controller
 
     public function edit(Manifest $manifest)
     {
-        return view('customers.edit', [
+        return view('manifests.edit', [
             'manifest' => $manifest
         ]);
     }
@@ -64,13 +64,13 @@ class ManifestController extends Controller
     public function update(UpdateManifestRequest $request, Manifest $manifest)
     {
         //
-        $customer->update($request->except('photo'));
+        $manifest->update($request->except('photo'));
 
         if($request->hasFile('photo')){
 
             // Delete Old Photo
             if($manifest->photo){
-                unlink(public_path('storage/manifests/') . $customer->photo);
+                unlink(public_path('storage/manifests/') . $manifest->photo);
             }
 
             // Prepare New Photo
@@ -81,7 +81,7 @@ class ManifestController extends Controller
             $file->storeAs('manifests/', $fileName, 'public');
 
             // Save DB
-            $customer->update([
+            $manifest->update([
                 'photo' => $fileName
             ]);
         }

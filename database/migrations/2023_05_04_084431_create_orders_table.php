@@ -13,14 +13,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->uuid();
+            $table->foreignId("user_id")->constrained()->onDelete('cascade');
             $table->foreignIdFor(\App\Models\Customer::class)
                 ->constrained();
-            $table->foreignIdFor(\App\Models\Supplier::class)
-                ->constrained();
             $table->string('order_date');
-            $table->string('manifest_number');
-            $table->string('departure_cfs');
-            $table->string('manifest_image')->nullable();
             $table->tinyInteger('order_status')
                 ->comment('0 - Pending / 1 - Complete');
             $table->integer('total_products');

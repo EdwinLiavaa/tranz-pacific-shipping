@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
-use App\Enums\OrderStatus;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Shipments extends Model
+class Shipment extends Model
 {
     protected $guarded = [
         'id',
@@ -17,21 +16,21 @@ class Shipments extends Model
         'hbl_number',
         'consignor',
         'consignee',
-        'handling_instructions',
         'weight',
         'volume',
         'packages',
+        'handling_instructions',
 
     ];
 
-     public function route(): BelongsTo
-    {
-        return $this->belongsTo(Routing::class);
-    }
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 
-    public function details(): HasMany
+     public function container(): BelongsTo
     {
-        return $this->hasMany(Containers::class);
+        return $this->belongsTo(Container::class);
     }
 
     public function scopeSearch($query, $value): void
