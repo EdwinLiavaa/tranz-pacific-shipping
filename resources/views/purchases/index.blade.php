@@ -55,7 +55,7 @@
                             {{ $purchase->purchase_date->format('d-m-Y') }}
                         </td>
                         <td class="align-middle text-center">
-                            {{ Number::currency($purchase->total_amount, 'USD') }}
+                            {{ $purchase->total_amount }}
                         </td>
 
                         @if ($purchase->purchase_status == 1)

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Shipment extends Model
+class Manifest extends Model
 {
     protected $guarded = [
         'id',

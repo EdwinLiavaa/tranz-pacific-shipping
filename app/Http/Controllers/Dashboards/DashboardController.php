@@ -30,18 +30,6 @@ class DashboardController extends Controller
             //->where('purchase_status', '=', 1)
             ->where('date', today()->format('Y-m-d'))->get()
             ->count();
-        $todayOrders = Order::query()
-            ->where('date', today()->format('Y-m-d'))->get()
-            ->count();
-        $todayCustomers = Customer::query()
-            ->where('date', today()->format('Y-m-d'))->get()
-            ->count();
-        $todayManifests = Manifest::query()
-            ->where('date', today()->format('Y-m-d'))->get()
-            ->count();
-        $todayContainers = Container::query()
-            ->where('date', today()->format('Y-m-d'))->get()
-            ->count();
         $categories = Category::count();
         $quotations = Quotation::count();
 
