@@ -6,7 +6,7 @@ use App\Models\Container;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class OrderTable extends Component
+class ContainerTable extends Component
 {
     use WithPagination;
 

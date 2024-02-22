@@ -6,7 +6,7 @@
         <div class="row g-2 align-items-center mb-3">
             <div class="col">
                 <h2 class="page-title">
-                    {{ __('Create Customer') }}
+                    {{ __('Create Shipment') }}
                 </h2>
             </div>
         </div>
@@ -19,49 +19,43 @@
     <div class="container-xl">
         <div class="row row-cards">
 
-            <form action="{{ route('customers.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('shipments.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                     <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">
-                                    {{ __('Customer Details') }}
+                                    {{ __('Shipment Details') }}
                                 </h3>
 
                                 <div class="row row-cards">
                                     <div class="col-md-12">
-                                        <x-input name="name" :required="true"/>
-
-                                        <x-input name="email" label="Email address" :required="true"/>
+                                        <x-input name="hbl_number" label="HBL Number" :required="true"/>
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="Phone Number" name="phone" :required="true"/>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6">
-                                        <x-input label="TIN number" name="account_holder" :required="true"/>
+                                        <x-input label="Consignor" name="consignor" :required="true"/>
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="Custom Warrant number" name="account_number" :required="true"/>
+                                        <x-input label="Consignee" name="consignee" :required="true"/>
                                     </div>
 
-                                    <div class="mb-3">
-                                        <label for="address" class="form-label required">
-                                            Address
-                                        </label>
+                                    <div class="col-sm-6 col-md-6">
+                                        <x-input label="Weight" name="weight" :required="true"/>
+                                    </div>
 
-                                        <textarea name="address"
-                                                  id="address"
-                                                  rows="3"
-                                                  class="form-control form-control-solid @error('address') is-invalid @enderror"
-                                            >{{ old('address') }}</textarea>
+                                    <div class="col-sm-6 col-md-6">
+                                        <x-input label="Volume" name="volume" :required="true"/>
+                                    </div>
 
-                                        @error('address')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
+                                    <div class="col-sm-12 col-md-12">
+                                            <textarea name="handling_instructions"
+                                                      id="handling_instructions"
+                                                      rows="5"
+                                                      class="form-control @error('notes') is-invalid @enderror"
+                                                      placeholder="Handling Instructions"
+                                            ></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +64,7 @@
                                     {{ __('Save') }}
                                 </button>
 
-                                <a class="btn btn-outline-warning" href="{{ route('customers.index') }}">
+                                <a class="btn btn-outline-warning" href="{{ route('shipments.index') }}">
                                     {{ __('Cancel') }}
                                 </a>
                             </div>

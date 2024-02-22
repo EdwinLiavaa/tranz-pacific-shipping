@@ -15,11 +15,11 @@
                 <!-- Page title actions -->
                 <div class="col-auto ms-auto d-print-none">
                     <div class="btn-list">
-                        <a href="{{ route('orders.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                        <a href="{{ route('manifests.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             <x-icon.plus/>
                             New Manifest
                         </a>
-                        <a href="{{ route('purchases.create') }}" class="btn btn-primary d-sm-none btn-icon" aria-label="Input new manifest">
+                        <a href="{{ route('manifests.create') }}" class="btn btn-primary d-sm-none btn-icon" aria-label="Input new manifest">
                             <x-icon.plus/>
                         </a>
                     </div>
@@ -167,7 +167,7 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $purchases }} Manifests
+                                                {{ $manifests }} Manifests
                                             </div>
                                         </div>
                                     </div>
@@ -185,7 +185,7 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $products }} Products
+                                                {{ $shipments }} Shipments
                                             </div>
                                         </div>
                                     </div>
@@ -203,7 +203,7 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $quotations }} Deliveries
+                                                {{ $containers }} Containers
                                             </div>
                                         </div>
                                     </div>

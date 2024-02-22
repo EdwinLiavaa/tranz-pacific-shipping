@@ -6,12 +6,12 @@
         <div class="row g-2 align-items-center mb-3">
             <div class="col">
                 <h2 class="page-title">
-                    {{ __('Edit Customer') }}
+                    {{ __('Edit Shipment') }}
                 </h2>
             </div>
         </div>
 
-        @include('partials._breadcrumbs', ['model' => $customer])
+        @include('partials._breadcrumbs', ['model' => $shipment])
     </div>
 </div>
 
@@ -19,7 +19,7 @@
     <div class="container-xl">
         <div class="row row-cards">
 
-            <form action="{{ route('customers.update', $customer) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('shipments.update', $shipment) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="row">
@@ -31,7 +31,7 @@
                                     {{ __('Profile Image') }}
                                 </h3>
 
-                                <img class="img-account-profile mb-2" src="{{ $customer->photo ? asset('storage/customers/'.$customer->photo) : asset('assets/img/demo/user-placeholder.svg') }}" alt="" id="image-preview" />
+                                <img class="img-account-profile mb-2" src="{{ $shipment->photo ? asset('storage/shipments/'.$shipment->photo) : asset('assets/img/demo/user-placeholder.svg') }}" alt="" id="image-preview" />
 
                                 <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 2 MB</div>
 
@@ -50,54 +50,52 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">
-                                    {{ __('Customer Details') }}
+                                    {{ __('Shipment Details') }}
                                 </h3>
 
                                 <div class="row row-cards">
                                     <div class="col-md-12">
-                                        <x-input name="name" :value="old('name', $customer->name)" :required="true" />
-
-                                        <x-input label="Email address" name="email" :value="old('email', $customer->email)" :required="true" />
+                                        <x-input name="hbl_number" :value="old('hbl_number', $shipment->hbl_number)" :required="true" />
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="Phone number" name="phone" :value="old('phone', $customer->phone)" :required="true" />
+                                        <x-input label="Consignor" name="consignor" :value="old('consignor', $shipment->consignor)" :required="true" />
                                     </div>
+
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="TIN number"
-                                                 name="account_holder"
-                                                 :value="old('account_holder', $customer->account_holder)"
+                                        <x-input label="Consignee" name="consignee" :value="old('consignee', $shipment->consignee)" :required="true" />
+                                    </div>
+
+                                   <div class="col-sm-6 col-md-6">
+                                        <x-input label="Weight"
+                                                 name="weight"
+                                                 :value="old('weight', $shipment->weight)"
                                                  :required="true"
                                         />
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="Custom warrant number"
-                                                 name="account_number"
-                                                 :value="old('account_number', $customer->account_number)"
+                                        <x-input label="Volume"
+                                                 name="volume"
+                                                 :value="old('volume', $shipment->volume)"
                                                  :required="true"
                                         />
                                     </div>
 
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label for="address" class="form-label required">
-                                                {{  __('Address') }}
-                                            </label>
+                                    <div class="col-sm-6 col-md-6">
+                                        <x-input label="Packages"
+                                                 name="packages"
+                                                 :value="old('packages', $shipment->packages)"
+                                                 :required="true"
+                                        />
+                                    </div>
 
-                                            <textarea
-                                                id="address"
-                                                name="address"
-                                                rows="3"
-                                                class="form-control @error('address') is-invalid @enderror"
-                                            >{{ old('address', $customer->address) }}</textarea>
-
-                                            @error('address')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                        </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <x-input label="Handling Instructions"
+                                                 name="handling_instructions"
+                                                 :value="old('handling_instructions', $shipment->handling_instructions)"
+                                                 :required="false"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +104,7 @@
                                     {{ __('Update') }}
                                 </button>
 
-                                <a class="btn btn-outline-warning" href="{{ route('customers.index') }}">
+                                <a class="btn btn-outline-warning" href="{{ route('shipments.index') }}">
                                     {{ __('Cancel') }}
                                 </a>
                             </div>

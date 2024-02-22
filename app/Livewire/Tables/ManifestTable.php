@@ -6,7 +6,7 @@ use App\Models\Manifest;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class OrderTable extends Component
+class ManifestTable extends Component
 {
     use WithPagination;
 

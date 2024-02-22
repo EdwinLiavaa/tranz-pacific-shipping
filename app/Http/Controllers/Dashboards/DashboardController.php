@@ -23,6 +23,7 @@ class DashboardController extends Controller
         $customers = Customer::count();
         $manifests = Manifest::count();
         $containers = Container::count();
+        $shipments = Shipment::count();
         $orders = Order::count();
         $products = Product::count();
         $purchases = Purchase::count();
@@ -42,6 +43,7 @@ class DashboardController extends Controller
             'customers' => $customers,
             'manifests' => $manifests,
             'containers' => $containers,
+            'shipments' => $shipments,
             'quotations' => $quotations
         ]);
     }

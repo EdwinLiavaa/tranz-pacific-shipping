@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        @include('partials._breadcrumbs', ['model' => $customer])
+        @include('partials._breadcrumbs', ['model' => $container])
     </div>
 </div>
 
@@ -19,7 +19,7 @@
     <div class="container-xl">
         <div class="row row-cards">
 
-            <form action="{{ route('customers.update', $customer) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('containers.update', $container) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="row">
@@ -31,7 +31,7 @@
                                     {{ __('Profile Image') }}
                                 </h3>
 
-                                <img class="img-account-profile mb-2" src="{{ $customer->photo ? asset('storage/customers/'.$customer->photo) : asset('assets/img/demo/user-placeholder.svg') }}" alt="" id="image-preview" />
+                                <img class="img-account-profile mb-2" src="{{ $container->photo ? asset('storage/containers/'.$container->photo) : asset('assets/img/demo/user-placeholder.svg') }}" alt="" id="image-preview" />
 
                                 <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 2 MB</div>
 
@@ -50,54 +50,42 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">
-                                    {{ __('Customer Details') }}
+                                    {{ __('Container Details') }}
                                 </h3>
 
                                 <div class="row row-cards">
                                     <div class="col-md-12">
-                                        <x-input name="name" :value="old('name', $customer->name)" :required="true" />
+                                        <x-input name="container_number" :value="old('container_number', $container->container_number)" :required="true" />
 
-                                        <x-input label="Email address" name="email" :value="old('email', $customer->email)" :required="true" />
+                                        <x-input label="Container Type" name="container_type" :value="old('container_type', $container->container_type)" :required="true" />
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="Phone number" name="phone" :value="old('phone', $customer->phone)" :required="true" />
+                                        <x-input label="Seal Number" name="seal_number" :value="old('seal_number', $container->seal_number)" :required="true" />
                                     </div>
-                                    <div class="col-sm-6 col-md-6">
-                                        <x-input label="TIN number"
-                                                 name="account_holder"
-                                                 :value="old('account_holder', $customer->account_holder)"
+
+                                   <div class="col-sm-6 col-md-6">
+                                        <x-input label="Tare weight"
+                                                 name="tare_weight"
+                                                 :value="old('tare_weight', $container->tare_weight)"
                                                  :required="true"
                                         />
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
-                                        <x-input label="Custom warrant number"
-                                                 name="account_number"
-                                                 :value="old('account_number', $customer->account_number)"
+                                        <x-input label="Gross Weight"
+                                                 name="gross_weight"
+                                                 :value="old('gross_weight', $container->gross_weight)"
                                                  :required="true"
                                         />
                                     </div>
 
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label for="address" class="form-label required">
-                                                {{  __('Address') }}
-                                            </label>
-
-                                            <textarea
-                                                id="address"
-                                                name="address"
-                                                rows="3"
-                                                class="form-control @error('address') is-invalid @enderror"
-                                            >{{ old('address', $customer->address) }}</textarea>
-
-                                            @error('address')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                        </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <x-input label="Volume"
+                                                 name="volume"
+                                                 :value="old('volume', $container->volume)"
+                                                 :required="true"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +94,7 @@
                                     {{ __('Update') }}
                                 </button>
 
-                                <a class="btn btn-outline-warning" href="{{ route('customers.index') }}">
+                                <a class="btn btn-outline-warning" href="{{ route('containers.index') }}">
                                     {{ __('Cancel') }}
                                 </a>
                             </div>
