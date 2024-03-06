@@ -22,6 +22,7 @@
             <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
+                    {{--
                     <div class="col-lg-4">
                         <div class="card">
                             <div class="card-body">
@@ -55,7 +56,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="col-lg-8">
                         <div class="card">

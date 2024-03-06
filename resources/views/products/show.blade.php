@@ -130,11 +130,11 @@
                                     </tr>
 
                                     <tr>
-                                        <td>Buying Price</td>
+                                        <td>Landed Cost</td>
                                         <td>{{ $product->buying_price }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Selling Price</td>
+                                        <td>Release Cost</td>
                                         <td>{{ $product->selling_price }}</td>
                                     </tr>
                                     <tr>
