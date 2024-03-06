@@ -110,7 +110,7 @@
                                     <div class="col-sm-6 col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="buying_price">
-                                                Buying price
+                                                Landed Cost
                                                 <span class="text-danger">*</span>
                                             </label>
 
@@ -133,7 +133,7 @@
                                     <div class="col-sm-6 col-md-6">
                                         <div class="mb-3">
                                             <label for="selling_price" class="form-label">
-                                                Selling price
+                                                Release Cost
                                                 <span class="text-danger">*</span>
                                             </label>
 
