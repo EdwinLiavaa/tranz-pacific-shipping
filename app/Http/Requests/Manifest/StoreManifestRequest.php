@@ -22,7 +22,7 @@ class StoreManifestRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'manifest_number' => 'required|string|unique:containers',
+            'manifest_number' => 'required|string|unique:manifests',
             'manifest_date' => 'required|string',
             'shipment_id' => 'required|integer',
         ];

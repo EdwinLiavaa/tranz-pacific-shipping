@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Container;
+namespace App\Http\Requests\Manifest;
 
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateContainerRequest extends FormRequest
+class UpdateManifestRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class UpdateContainerRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'manifest_number' => 'required|string|unique:containers',
+                'manifest_number' => 'required|string|unique:manifests',
                 'manifest_date' => 'required|string',
                 'shipment_id' => 'required|integer'
         ];
