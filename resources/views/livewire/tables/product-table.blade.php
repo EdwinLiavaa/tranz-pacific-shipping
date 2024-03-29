@@ -61,9 +61,11 @@
                     <th class="align-middle text-center w-1">
                         {{ __('No.') }}
                     </th>
+                    {{--
                     <th scope="col" class="align-middle text-center">
                         {{ __('Image') }}
                     </th>
+                    --}}
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('name')" href="#" role="button">
                             {{ __('Name') }}
@@ -99,9 +101,11 @@
                     <td class="align-middle text-center">
                         {{ $loop->iteration }}
                     </td>
+                    {{--
                     <td class="align-middle text-center">
                         {{ $product->product_image }}
                     </td>
+                    --}}
                     <td class="align-middle text-center">
                         {{ $product->name }}
                     </td>
