@@ -7,7 +7,7 @@
         </div>
 
         <div class="card-actions">
-            <x-action.create route="{{ route('customers.create') }}" />
+            <x-action.create route="{{ route('containers.create') }}" />
         </div>
     </div>
 
@@ -47,15 +47,45 @@
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
-                    <a wire:click.prevent="sortBy('name')" href="#" role="button">
-                        {{ __('Name') }}
-                        @include('inclues._sort-icon', ['field' => 'name'])
+                    <a wire:click.prevent="sortBy('container_number')" href="#" role="button">
+                        {{ __('Container No.') }}
+                        @include('inclues._sort-icon', ['field' => 'container_number'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
-                    <a wire:click.prevent="sortBy('email')" href="#" role="button">
-                        {{ __('Email') }}
-                        @include('inclues._sort-icon', ['field' => 'email'])
+                    <a wire:click.prevent="sortBy('container_type')" href="#" role="button">
+                        {{ __('Container Type') }}
+                        @include('inclues._sort-icon', ['field' => 'container_type'])
+                    </a>
+                </th>
+                <th scope="col" class="align-middle text-center">
+                    <a wire:click.prevent="sortBy('seal_number')" href="#" role="button">
+                        {{ __('Seal No.') }}
+                        @include('inclues._sort-icon', ['field' => 'seal_number'])
+                    </a>
+                </th>
+                <th scope="col" class="align-middle text-center">
+                    <a wire:click.prevent="sortBy('tare_weight')" href="#" role="button">
+                        {{ __('Tare Weight') }}
+                        @include('inclues._sort-icon', ['field' => 'tare_weight'])
+                    </a>
+                </th>
+                <th scope="col" class="align-middle text-center">
+                    <a wire:click.prevent="sortBy('gross_weight')" href="#" role="button">
+                        {{ __('Gross Weight') }}
+                        @include('inclues._sort-icon', ['field' => 'gross_weight'])
+                    </a>
+                </th>
+                <th scope="col" class="align-middle text-center">
+                    <a wire:click.prevent="sortBy('volume')" href="#" role="button">
+                        {{ __('Volume') }}
+                        @include('inclues._sort-icon', ['field' => 'volume'])
+                    </a>
+                </th>
+                <th scope="col" class="align-middle text-center">
+                    <a wire:click.prevent="sortBy('customer_id')" href="#" role="button">
+                        {{ __('Customer Id') }}
+                        @include('inclues._sort-icon', ['field' => 'customer_id'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
@@ -64,21 +94,36 @@
             </tr>
             </thead>
             <tbody>
-            @forelse ($customers as $customer)
+            @forelse ($containers as $container)
                 <tr>
                     <td class="align-middle text-center">
-                        {{ $customer->id }}
+                        {{ $container->id }}
                     </td>
                     <td class="align-middle text-center">
-                        {{ $customer->name }}
+                        {{ $container->container_number }}
                     </td>
                     <td class="align-middle text-center">
-                        {{ $customer->email }}
+                        {{ $container->container_type }}
                     </td>
                     <td class="align-middle text-center">
-                        <x-button.show class="btn-icon" route="{{ route('customers.show', $customer) }}"/>
-                        <x-button.edit class="btn-icon" route="{{ route('customers.edit', $customer) }}"/>
-                        <x-button.delete class="btn-icon" route="{{ route('customers.destroy', $customer) }}"/>
+                        {{ $container->seal_number }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $container->tare_weight }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $container->gross_weight }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $container->volume }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $container->customer_id }}
+                    </td>
+                    <td class="align-middle text-center">
+                        <x-button.show class="btn-icon" route="{{ route('containers.show', $container) }}"/>
+                        <x-button.edit class="btn-icon" route="{{ route('containers.edit', $container) }}"/>
+                        <x-button.delete class="btn-icon" route="{{ route('containers.destroy', $container) }}"/>
                     </td>
                 </tr>
             @empty
@@ -94,11 +139,11 @@
 
     <div class="card-footer d-flex align-items-center">
         <p class="m-0 text-secondary">
-            Showing <span>{{ $customers->firstItem() }}</span> to <span>{{ $customers->lastItem() }}</span> of <span>{{ $customers->total() }}</span> entries
+            Showing <span>{{ $containers->firstItem() }}</span> to <span>{{ $containers->lastItem() }}</span> of <span>{{ $containers->total() }}</span> entries
         </p>
 
         <ul class="pagination m-0 ms-auto">
-            {{ $customers->links() }}
+            {{ $containers->links() }}
         </ul>
     </div>
 </div>
