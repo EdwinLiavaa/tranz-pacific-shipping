@@ -7,7 +7,7 @@
         </div>
 
         <div class="card-actions">
-            <x-action.create route="{{ route('customers.create') }}" />
+            <x-action.create route="{{ route('manifests.create') }}" />
         </div>
     </div>
 
@@ -28,7 +28,7 @@
             <div class="ms-auto text-secondary">
                 Search:
                 <div class="ms-2 d-inline-block">
-                    <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
+                    <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search manifest">
                 </div>
             </div>
         </div>
@@ -47,15 +47,21 @@
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
-                    <a wire:click.prevent="sortBy('name')" href="#" role="button">
-                        {{ __('Name') }}
-                        @include('inclues._sort-icon', ['field' => 'name'])
+                    <a wire:click.prevent="sortBy('manifest_number')" href="#" role="button">
+                        {{ __('Manifest Number') }}
+                        @include('inclues._sort-icon', ['field' => 'manifest_number'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
-                    <a wire:click.prevent="sortBy('email')" href="#" role="button">
-                        {{ __('Email') }}
-                        @include('inclues._sort-icon', ['field' => 'email'])
+                    <a wire:click.prevent="sortBy('manifest_date')" href="#" role="button">
+                        {{ __('Manifest Date') }}
+                        @include('inclues._sort-icon', ['field' => 'manifest_date'])
+                    </a>
+                </th>
+                <th scope="col" class="align-middle text-center">
+                    <a wire:click.prevent="sortBy('shipment_id')" href="#" role="button">
+                        {{ __('Shipment Id') }}
+                        @include('inclues._sort-icon', ['field' => 'shipment_id'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
@@ -64,21 +70,24 @@
             </tr>
             </thead>
             <tbody>
-            @forelse ($customers as $customer)
+            @forelse ($manifests as $manifest)
                 <tr>
                     <td class="align-middle text-center">
-                        {{ $customer->id }}
+                        {{ $manifest->id }}
                     </td>
                     <td class="align-middle text-center">
-                        {{ $customer->name }}
+                        {{ $manifest->manifest_number }}
                     </td>
                     <td class="align-middle text-center">
-                        {{ $customer->email }}
+                        {{ $manifest->manifest_date }}
                     </td>
                     <td class="align-middle text-center">
-                        <x-button.show class="btn-icon" route="{{ route('customers.show', $customer) }}"/>
-                        <x-button.edit class="btn-icon" route="{{ route('customers.edit', $customer) }}"/>
-                        <x-button.delete class="btn-icon" route="{{ route('customers.destroy', $customer) }}"/>
+                        {{ $manifest->shipment_id }}
+                    </td>
+                    <td class="align-middle text-center">
+                        <x-button.show class="btn-icon" route="{{ route('manifests.show', $manifest) }}"/>
+                        <x-button.edit class="btn-icon" route="{{ route('manifests.edit', $manifest) }}"/>
+                        <x-button.delete class="btn-icon" route="{{ route('manifests.destroy', $manifest) }}"/>
                     </td>
                 </tr>
             @empty
@@ -94,11 +103,11 @@
 
     <div class="card-footer d-flex align-items-center">
         <p class="m-0 text-secondary">
-            Showing <span>{{ $customers->firstItem() }}</span> to <span>{{ $customers->lastItem() }}</span> of <span>{{ $customers->total() }}</span> entries
+            Showing <span>{{ $manifests->firstItem() }}</span> to <span>{{ $manifests->lastItem() }}</span> of <span>{{ $manifests->total() }}</span> entries
         </p>
 
         <ul class="pagination m-0 ms-auto">
-            {{ $customers->links() }}
+            {{ $manifests->links() }}
         </ul>
     </div>
 </div>
