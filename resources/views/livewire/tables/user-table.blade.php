@@ -47,9 +47,6 @@
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
-                    {{ __('Photo') }}
-                </th>
-                <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('name')" href="#" role="button">
                         {{ __('Name') }}
                         @include('inclues._sort-icon', ['field' => 'name'])
@@ -77,9 +74,6 @@
                 <tr>
                     <td class="align-middle text-center" style="width: 10%">
                         {{ $user->id }}
-                    </td>
-                    <td class="align-middle text-center d-none d-sm-table-cell">
-                        {{ $user->photo }}
                     </td>
                     <td class="align-middle text-center">
                         {{ $user->name }}
